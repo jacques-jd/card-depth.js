@@ -17,6 +17,8 @@ function update(){
     	list[i].style.transition=".15s box-shadow";
     if(!list[i].hasAttribute("no-material-border"))
     	list[i].style.borderBottom="1px solid #AAA";
+    if(!list[i].hasAttribute("no-padding"))
+      list[i].style.padding="10px";
     doDepth(list[i]); //looping through all of the elements
   }
 }
