@@ -3,7 +3,6 @@ Add cards with depth. Material design accurate.
 
 # How to get started
 Simply add card-depth.js to your code directory and import it to your HTML. 
-![code](http://i.imgur.com/ESC0NkL.png)
 
 # How to use
 1. Find the element you want to make into a card. In this example, we'll use a div tag with some content in it.
