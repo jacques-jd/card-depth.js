@@ -28,10 +28,10 @@ Simply add card-depth.js to your code directory and import it to your HTML.
 #Reference
 Added HTML attributes: z, z-default, z-hover, z-click
 
-z: used inside of code, user cannot play with this variable as it constantly changes.
+`z`: used inside of code, user cannot play with this variable as it constantly changes.
 
-z-default: the z height (in pixels) when user is not hovering or clicking on element.
+`z-default`: the z height (in pixels) when user is not hovering or clicking on element.
 
-z-hover: the z height (in pixels) when user is hovering element.
+`z-hover`: the z height (in pixels) when user is hovering element.
 
-z-click: the z height (in pixels) when user is clicking on element.
+`z-click`: the z height (in pixels) when user is clicking on element.
