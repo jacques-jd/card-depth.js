@@ -4,10 +4,11 @@ function shadow(int){
 
 function update(){
   var list = document.getElementsByClassName("card"); //loop through all HTML elements with the class card. 
-  //list = document.getElementByTagName("card"); 
+  //var list = document.getElementsByTagName("card"); 
   //uncomment line above if you want to use <card> instead of <div class='card'>
   var len = list.length;
   for(i=0;i<len;i++){
+    list[i].style.display="block"; //make all elements visible (using <card> they are not visible)
     doDepth(list[i]); //looping through all of the elements
   }
 }
