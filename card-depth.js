@@ -8,7 +8,15 @@ function update(){
   //uncomment line above if you want to use <card> instead of <div class='card'>
   var len = list.length;
   for(i=0;i<len;i++){
-    list[i].style.display="block"; //make all elements visible (using <card> they are not visible)
+    list[i].style.display="block";
+    if(!list[i].hasAttribute("no-margin")) //set default styles if no contradicting attributes exist
+    	list[i].style.margin="25px";
+    if(!list[i].hasAttribute("no-height"))
+    	list[i].style.height="100px";
+    if(!list[i].hasAttribute("no-transition"))
+    	list[i].style.transition=".15s box-shadow";
+    if(!list[i].hasAttribute("no-material-border"))
+    	list[i].style.borderBottom="1px solid #AAA";
     doDepth(list[i]); //looping through all of the elements
   }
 }
