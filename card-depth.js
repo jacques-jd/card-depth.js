@@ -1,10 +1,10 @@
 function shadow(int){
-  return "0px "+int/5+"px "+int/3+"px #555"; //shadow equation. accurate to the material design standards (approximately)
+  return "0px "+int*2+"px "+int*6+"px #555"; //shadow equation. accurate to the material design standards (approximately)
 }
 
 function update(){
   var list = document.getElementsByClassName("card"); //loop through all HTML elements with the class card. 
-  //var list = document.getElementsByTagName("card"); 
+  var list = document.getElementsByTagName("card"); 
   //uncomment line above if you want to use <card> instead of <div class='card'>
   var len = list.length;
   for(i=0;i<len;i++){
@@ -15,10 +15,10 @@ function update(){
     	list[i].style.height="100px";
     if(!list[i].hasAttribute("no-transition"))
     	list[i].style.transition=".15s box-shadow";
-    if(!list[i].hasAttribute("no-material-border"))
-    	list[i].style.borderBottom="1px solid #AAA";
     if(!list[i].hasAttribute("no-padding"))
       list[i].style.padding="10px";
+    if(!list[i].hasAttribute("no-border-radius"))
+   	  list[i].style.borderRadius="2px";
     doDepth(list[i]); //looping through all of the elements
   }
 }
