@@ -23,7 +23,6 @@ Simply add card-depth.js to your code directory and import it to your HTML.
   <p>I am content!</p>
 </div>
 ```
-Here's an example: http://codepen.io/anon/pen/xbBNOe
 
 4. By default, your card should now exist with a height of 100px and a margin of 25px. It will have a transition of .15s for shadows by default. Check the reference to learn how to turn them off.
 
