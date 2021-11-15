@@ -2,7 +2,7 @@
 Add cards with depth. Material design accurate. 
 
 # How to get started
-Simply add card-depth.js to your code directory and import it to your HTML. 
+Simply add card-depth.js to your code directory and import it to your HTML.
 
 # How to use
 1. Find the element you want to make into a card. In this example, we'll use a div tag with some content in it.
@@ -25,6 +25,10 @@ Simply add card-depth.js to your code directory and import it to your HTML.
 ```
 
 4. By default, your card should now exist with a height of 100px and a margin of 25px. It will have a transition of .15s for shadows by default. Check the reference to learn how to turn them off.
+
+EXAMPLE: https://jsfiddle.net/fcogpzja/
+
+
 
 #Reference
 Added HTML attributes: z, z-default, z-hover, z-click, no-margin, no-padding, no-transition, no-border-radius, no-height
