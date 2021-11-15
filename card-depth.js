@@ -79,4 +79,4 @@ function doRadius(i) {
   setRadius(zh, i);
 }
 
-update(); //initial update
+window.addEventListener("load", update); //initial update
