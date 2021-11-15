@@ -26,20 +26,24 @@ Simply add card-depth.js to your code directory and import it to your HTML.
 
 4. By default, your card should now exist with a height of 100px and a margin of 25px. It will have a transition of .15s for shadows by default. Check the reference to learn how to turn them off.
 
+Note: You may also use an element named `<card>`, however it is not officially supported by HTML5 and so it may cause errors.
+
 EXAMPLE: https://jsfiddle.net/fcogpzja/1/
 
 
 
 #Reference
-Added HTML attributes: z, z-default, z-hover, z-click, no-margin, no-padding, no-transition, no-border-radius, no-height
+Added HTML attributes: z, z-default, z-hover, z-click, border-radius, no-margin, no-padding, no-transition, no-border-radius, no-height
 
 `z`: used inside of code, user cannot play with this variable as it constantly changes.
 
-`z-default`: the z height (in pixels) when user is not hovering or clicking on element.
+`z-default`: the z height (in pixels) when user is not hovering or clicking on element. defaults to 10px.
 
-`z-hover`: the z height (in pixels) when user is hovering element.
+`z-hover`: the z height (in pixels) when user is hovering element. defaults to 10px.
 
-`z-click`: the z height (in pixels) when user is clicking on element.
+`z-click`: the z height (in pixels) when user is clicking on element. defaults to 10px.
+
+`border-radius`: self explanatory, the radius of the corners of the card. defaults to 3px.
 
 `no-margin`: takes no value. Simply a flag indicating to not apply the default 25px margin to this card.
 
