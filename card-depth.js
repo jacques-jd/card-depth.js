@@ -1,51 +1,82 @@
-function shadow(int){
-  return "0px "+int*2+"px "+int*6+"px #555"; //shadow equation. accurate to the material design standards (approximately)
+function shadow(int) {
+  return "0px "+int/5+"px "+int/3+"px #00000077"; //shadow equation. accurate to the material design standards (approximately)
 }
 
-function update(){
-  var list = document.getElementsByClassName("card"); //loop through all HTML elements with the class card. 
-  var list = document.getElementsByTagName("card"); 
-  //uncomment line above if you want to use <card> instead of <div class='card'>
-  var len = list.length;
-  for(i=0;i<len;i++){
-    list[i].style.display="block";
-    if(!list[i].hasAttribute("no-margin")) //set default styles if no contradicting attributes exist
-    	list[i].style.margin="25px";
-    if(!list[i].hasAttribute("no-height"))
-    	list[i].style.height="100px";
-    if(!list[i].hasAttribute("no-transition"))
-    	list[i].style.transition=".15s box-shadow";
-    if(!list[i].hasAttribute("no-padding"))
-      list[i].style.padding="10px";
-    if(!list[i].hasAttribute("no-border-radius"))
-   	  list[i].style.borderRadius="2px";
-    doDepth(list[i]); //looping through all of the elements
+function update() {
+	var items = [
+  	document.getElementsByClassName("card"),
+    document.getElementsByTagName("card"),
+  ];
+
+  for(var list of items){
+    var len = list.length;
+    for (var el of list) {
+      el.style.display = "block";
+      if (!el.hasAttribute("no-margin")) //set default styles if no contradicting attributes exist
+        el.style.margin = "25px";
+      if (!el.hasAttribute("no-height"))
+        el.style.height = "100px";
+      if (!el.hasAttribute("no-transition"))
+        el.style.transition = ".15s box-shadow";
+      if (!el.hasAttribute("no-padding"))
+        el.style.padding = "10px";
+      if (!el.hasAttribute("no-border-radius"))
+        el.style.borderRadius = "3px";
+      doDepth(el); //looping through all of the elements
+      doRadius(el);
+    }
   }
 }
 
-function setDepth(int,obj,type){
-  if(int==null)
+function setDepth(int, obj, type) {
+  if (int == null)
     return
   obj.style.boxShadow = shadow(int); //using shadow equation to set css style
-  if(type==="hover")
-  	obj.setAttribute("z",obj.getAttribute("z-hover")); //for when click and hover interfere with eachother
+  if (type === "hover")
+    obj.setAttribute("z", obj.getAttribute("z-hover")); //for when click and hover interfere with eachother
 }
 
-function doDepth(i){
-  function ga(x) {return i.getAttribute(x);} //easier to call method alias
-  
+function setRadius(int, obj) {
+  if (int == null)
+    return
+  obj.style.borderRadius = int + "px";
+}
+
+function doDepth(i) {
+  var ga = (x) => {
+    return i.getAttribute(x);
+  } //easier to call method alias
+
   //getting attributes
-  var zh = ga("z-default") || null;
-  var zhc = ga("z-click") || null;
-  var zhh = ga("z-hover") || null;
-  setDepth(zh,i);
+  var zh = ga("z-default") || 10;
+  var zhc = ga("z-click") || 10;
+  var zhh = ga("z-hover") || 10;
+  setDepth(zh, i);
   //events of release (mouse leave, mouse up, etc)
-  i.onmouseup   = function(){ setDepth(ga("z"),i)};
-  i.onmouseout  = function(){ setDepth(zh,i)};
-  
+  i.onmouseup = function() {
+    setDepth(ga("z"), i)
+  };
+  i.onmouseout = function() {
+    setDepth(zh, i)
+  };
+
   //events of activate (mouse enter, mouse down, etc)
-  i.onmousedown = function(){ setDepth(zhc,i)};
-  i.onmouseover = function(){setDepth(zhh,i,"hover")};
+  i.onmousedown = function() {
+    setDepth(zhc, i)
+  };
+  i.onmouseover = function() {
+    setDepth(zhh, i, "hover")
+  };
+}
+
+function doRadius(i) {
+  var ga = (x) => {
+    return i.getAttribute(x);
+  } //easier to call method alias
+
+  //getting attributes
+  var zh = ga("border-radius") || 3;
+  setRadius(zh, i);
 }
 
 update(); //initial update
