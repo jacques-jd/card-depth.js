@@ -19,7 +19,7 @@ Simply add card-depth.js to your code directory and import it to your HTML.
 ```
 3. Add your desired height effects. (consult the reference to learn about these)
 ```
-<div class="card" z-default='20' z-hover='50'>
+<div class="card" z-default='10' z-hover='20'>
   <p>I am content!</p>
 </div>
 ```
@@ -37,13 +37,13 @@ Added HTML attributes: z, z-default, z-hover, z-click, border-radius, no-margin,
 
 `z`: used inside of code, user cannot play with this variable as it constantly changes.
 
-`z-default`: the z height (in pixels) when user is not hovering or clicking on element. defaults to 10px.
+`z-default`: the z height when user is not hovering or clicking on element. defaults to 5.
 
-`z-hover`: the z height (in pixels) when user is hovering element. defaults to 10px.
+`z-hover`: the z height when user is hovering element. defaults to 5.
 
-`z-click`: the z height (in pixels) when user is clicking on element. defaults to 10px.
+`z-click`: the z height when user is clicking on element. defaults to 5.
 
-`border-radius`: self explanatory, the radius of the corners of the card. defaults to 3px.
+`border-radius`: self explanatory, the radius of the corners of the card. defaults to 2px.
 
 `no-margin`: takes no value. Simply a flag indicating to not apply the default 25px margin to this card.
 
