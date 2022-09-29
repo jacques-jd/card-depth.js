@@ -3,7 +3,7 @@ function shadow(int) {
 }
 
 function init() {
-  //fetching all elements flagged as a card
+  //fetching all card elements
 	let items = [
   	document.getElementsByClassName("card"),
     document.getElementsByTagName("card"),
@@ -11,13 +11,11 @@ function init() {
 
   Element.prototype.ha = function(a) { return this.hasAttribute(a); }
 
-  //looping through the two arrays above
   for(let list of items) {
-    //looping through the elements of these arrays
     for (let el of list) {
       el.style.display = "block";
       
-      //checking for style canceling flags
+      //checking for style cancelling flags
       if (!el.ha("no-margin")) el.style.margin = "25px";
       if (!el.ha("no-height")) el.style.height = "100px";
       if (!el.ha("no-transition")) el.style.transition = ".15s box-shadow";
